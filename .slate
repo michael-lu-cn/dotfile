@@ -1,0 +1,76 @@
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# Resize Bindings
+#bind right:alt       resize +10% +0
+bind right:alt;cmd;shift          resize +10% +0
+#bind left:alt        resize -10% +0
+bind left:alt;cmd;shift          resize -10% +0
+#bind up:alt          resize +0   -10%
+bind up:alt;cmd;shift          resize +0   -10%
+#bind down:alt        resize +0   +10%
+bind down:alt;cmd;shift          resize +0   +10%
+#bind right:ctrl;alt  resize -10% +0 bottom-right
+#bind left:ctrl;alt   resize +10% +0 bottom-right
+#bind up:ctrl;alt     resize +0   +10% bottom-right
+#bind down:ctrl;alt   resize +0   -10% bottom-right
+
+# Push Bindings
+bind ':shift;cmd  push right bar-resize:screenSizeX/2
+bind ;:shift;cmd   push left  bar-resize:screenSizeX/2
+bind up:alt;cmd     push up    bar-resize:screenSizeY
+bind down:alt;cmd move  screenOriginX+screenSizeX/4;screenOriginY+screenSizeY/4 screenSizeX/2;screenSizeY/2
+#bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
+bind u:shift;cmd   push up  bar-resize:screenSizeY/2
+bind d:shift;cmd   push down  bar-resize:screenSizeY/2
+
+# move to top left corner
+bind q:shift;cmd;alt move screenOriginX;screenOriginY screenSizeX/2;screenSizeY/2
+# move to top right corner
+bind w:shift;cmd;alt move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2
+# move to bottom left corner
+bind a:shift;cmd;alt move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2
+# move to bottom right corner
+bind s:shift;cmd;alt move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2
+
+# Nudge Bindings
+#bind right:shift;alt nudge +10% +0
+#bind left:shift;alt  nudge -10% +0
+#bind up:shift;alt    nudge +0   -10%
+#bind down:shift;alt  nudge +0   +10%
+
+# Throw Bindings
+bind left:ctrl;alt;cmd         throw 0 resize
+bind down:ctrl;alt;cmd         throw 1 resize
+bind right:ctrl;alt;cmd        throw 2 resize
+
+bind 3:ctrl;alt         throw 2 resize
+bind right:ctrl;alt;cmd throw right resize
+bind left:ctrl;alt;cmd  throw left  resize
+bind up:ctrl;alt;cmd    throw up    resize
+bind down:ctrl;alt;cmd  throw down  resize
+
+# Focus Bindings
+bind  ,:shift;cmd    focus left
+#bind .:shift;cmd     focus right
+#bind up:cmd       focus up
+#bind down:cmd     focus down
+#bind up:cmd;alt   focus behind
+#bind down:cmd;alt focus behind
+
+# Window Hints
+bind esc:cmd hint
+
+# tile four windows 
+alias topleft move screenOriginX;screenOriginY screenSizeX/2;screenSizeY/2
+alias topright move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2
+alias bottomleft move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2
+alias bottomright move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2
+
+layout texteditquadrants 'Terminal' ${topleft} | ${topright} | ${bottomleft} | ${bottomright}
+layout texteditquadrants2 'WebStorm' ${topleft} | ${topright} | ${bottomleft} | ${bottomright}
+bind x:shift;cmd;alt layout texteditquadrants
+bind w:shift;cmd;alt layout texteditquadrants2
+
+
+

@@ -1,0 +1,14 @@
+[user]
+	email = xinguo.lu@rjfittime.com
+	name = luxinguo
+	proxy = 
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[core]
+	editor = /usr/bin/vim
+[http]
+[http]
+	sslVerify = false
